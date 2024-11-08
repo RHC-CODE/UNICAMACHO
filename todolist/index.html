@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div id="container1">
+        <div id="container">
+            <div id="login-form">
+                <h2>Login</h2>
+                <input id="username" type="text" placeholder="username" />
+                <input id="password" type="password" placeholder="password" />
+                <button onclick="login()">Iniciar Sesión</button>
+            </div>
+
+            <div id="todo-app" style="display: none;">
+                <h2>Bienvenido</h2>
+                <div id="menu-buttons">
+                    <button onclick="showSection('add-task')">Agregar</button>
+                    <button onclick="showSection('view-tasks')">Ver</button>
+                    <button onclick="showSection('delete-tasks')">Eliminar</button>
+                    <button onclick="logout()">Cerrar Sesión</button>
+                </div>
+            </div>               
+        </div>
+
+        <div id="add-task" class="task-section">
+            <button class="close-btn" data-section="add-task" onclick="ocultarInformacion(event)">x</button>
+            <h3>Agregar Tarea</h3>
+            <input id="todo-title" type="text" placeholder="Tarea" />
+            <input id="date-picker" type="date" />
+            <select id="category-select">
+                <option value="">Seleccionar categoría</option>
+                <option value="Hogar">Hogar</option>
+                <option value="Trabajo">Trabajo</option>
+                <option value="Universidad">Universidad</option>
+            </select>
+            <button onclick="addTodo()">Guardar</button> 
+        </div>
+    
+        <div id="view-tasks" class="task-section">
+            <button class="close-btn" data-section="view-tasks" onclick="ocultarInformacion(event)">x</button>
+            <h3>Tareas</h3>
+            <div id="todo-list"></div>
+            <div id="no-tasks-message" style="display: none; color: red;">No hay tareas disponibles.</div> 
+        </div>     
+
+        <div id="delete-tasks" class="task-section">
+            <button class="close-btn" data-section="delete-tasks" onclick="ocultarInformacion(event)">x</button>
+            <h3>Eliminar Tareas</h3>
+            <div id="delete-list"></div>
+            <div id="no-delete-tasks-message" style="display: none; color: rgb(228, 24, 24);">No hay tareas disponibles para eliminar.</div>
+            <button onclick="deleteSelected()">Eliminar Selección</button>
+        </div>                            
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
