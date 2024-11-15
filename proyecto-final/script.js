@@ -1,5 +1,6 @@
 let currentUserRole = '';
 let registeredUsers = [];
+let confettiInterval;
 
 function showOptions(role) {
     currentUserRole = role;
@@ -84,6 +85,8 @@ function populateAdminTable() {
     });
 }
 
+
+
 function submitInfo() {
     const code = document.getElementById('code').value;
     const city = document.getElementById('city').value;
@@ -96,16 +99,20 @@ function submitInfo() {
     const userInfoDisplay = document.getElementById('userInfoDisplay');
     if (code === 'a1') {
         userInfoDisplay.innerHTML = `
-            Código: ${code}<br>
-            Ciudad: ${city}<br>
+            Código: ${code}
+            Ciudad: ${city}
             ¡Ganaste!
         `;
+        // Iniciar confeti continuo
+        startConfetti();
     } else {
         userInfoDisplay.innerHTML = `
-            Código: ${code}<br>
-            Ciudad: ${city}<br>
+            Código: ${code}
+            Ciudad: ${city}
             Suerte para la próxima, sigue intentando.
         `;
+        // Detener confeti si no es el código ganador
+        stopConfetti();
     }
 
     alert(`Código: ${code}, Ciudad: ${city}`);
@@ -113,6 +120,23 @@ function submitInfo() {
     document.getElementById('code').value = '';
     document.getElementById('city').value = '';
 }
+
+function startConfetti() {
+    stopConfetti(); // Asegurarse de que no haya otro intervalo en ejecución
+    confettiInterval = setInterval(() => {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    }, 1000); // Generar confeti cada segundo
+}
+
+function stopConfetti() {
+    clearInterval(confettiInterval);
+}
+
+
 
 function goBack() {
     document.getElementById('mainMenu').classList.remove('hidden');
