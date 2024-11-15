@@ -1,0 +1,107 @@
+/* Contenedor con opacidad y sombra */
+.containerWithShadow {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.057); /* Fondo semitransparente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra sutil */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    opacity: 0.9; /* Opacidad de 0.9 para hacerlo ligeramente visible */
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.containerWithShadow:hover {
+    opacity: 1; /* Hace que el contenedor sea totalmente visible al hacer hover */
+    transition: opacity 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Ajustar el contenido para que se vea bien dentro del contenedor */
+.containerWithShadow h3, .containerWithShadow p {
+    margin: 10px 0;
+    color: #fff;
+}
+
+/* Estilos generales del body */
+body {
+    font-family: 'Arial', sans-serif;
+    font-style: italic; /* Tipo de letra cursiva */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle, #2600ff, #d438c2); /* Fondo degradado azul, morado y verde */
+    background-size: 300% 150%; /* Tamaño del fondo para el movimiento */
+    animation: backgroundAnimation 2s ease infinite; /* Aplicar la animación */
+}
+
+/* Animación de fondo */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Estilo de los encabezados */
+h1, h2, h3 {
+    color: #dd1212;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra para los encabezados */
+}
+
+/* Estilo de los botones */
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Aumento de tamaño en hover */
+}
+
+/* Estilo de las tablas */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+td {
+    transition: background-color 0.3s ease; /* Efecto de transición para celdas */
+}
+
+td:hover {
+    background-color: #f1f1f1; /* Efecto de hover en las celdas */
+}
+
+/* Estilo para ocultar elementos */
+.hidden {
+    display: none;
+}

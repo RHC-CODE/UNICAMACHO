@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="mainMenu" class="containerWithShadow">
+        <h1>¡Bienvenido!</h1>
+        <h1>WinCode</h1>
+        <p>Seleccione su rol para continuar:</p>
+        <button onclick="showOptions('admin')">Admin</button>
+        <button onclick="showOptions('user')">User</button>
+    </div>
+
+    <div id="options" class="containerWithShadow hidden">
+        <h2 id="roleTitle"></h2>
+        <button onclick="showRegisterForm()">Sign Up</button>
+        <button onclick="showLoginForm()">Login</button>
+        <button onclick="goBack()">Regresar</button>
+    </div>
+
+    <div id="registerForm" class="containerWithShadow hidden">
+        <h3>Registro</h3>
+        <input type="text" id="name" placeholder="Nombre" required>
+        <input type="text" id="cedula" placeholder="Cédula" required>
+        <input type="email" id="email" placeholder="Correo" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button onclick="saveData()">Guardar</button>
+        <button onclick="goBack()">Regresar</button>
+    </div>
+
+    <div id="loginForm" class="containerWithShadow hidden">
+        <h3>Ingreso</h3>
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="userPassword" placeholder="Contraseña" required>
+        <button onclick="login()">Ingresar</button>
+        <button onclick="goBack()">Regresar</button>
+    </div>
+
+    <div id="userDashboard" class="containerWithShadow hidden">
+        <h3>Bienvenido, <span id="userName"></span>!</h3>
+        <input type="text" id="code" placeholder="Ingrese su código" required>
+        <input type="text" id="city" placeholder="Ingrese su ciudad" required>
+        <button onclick="submitInfo()">Enviar</button>
+        <button onclick="goBack()">Regresar</button>
+
+        <!-- Mostrar los valores ingresados -->
+        <div id="userInfoDisplay"></div>
+    </div>
+
+    <div id="adminDashboard" class="containerWithShadow hidden">
+        <h3>Panel de Administrador</h3>
+        <h2>Lista ganadores</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Codigo</th>
+                    <th>Correo</th>
+                    <th>Estado</th> 
+                    <th>Fecha</th>                   
+                </tr>
+            </thead>
+            <tbody id="adminTableBody">
+                <!-- Los datos se agregarán aquí -->
+            </tbody>
+        </table>
+        <button onclick="goBack()">Regresar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
