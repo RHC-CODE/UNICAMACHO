@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoreo de Flujo de Agua y Gas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Monitoreo IoT de Flujo de Agua y Gas</h1>
+    </header>
+
+    <section id="monitoring">
+        <div class="sensor" id="agua">
+            <h2>Flujo de Agua</h2>
+            <p>Estado: <span id="estado-agua">Esperando datos...</span></p>
+            <p>Flujo: <span id="flujo-agua">0 L/min</span></p>
+        </div>
+
+        <div class="sensor" id="gas">
+            <h2>Flujo de Gas</h2>
+            <p>Estado: <span id="estado-gas">Esperando datos...</span></p>
+            <p>Flujo: <span id="flujo-gas">0 m³/h</span></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Aplicación IoT para monitoreo de ambientes. &copy; 2025</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
